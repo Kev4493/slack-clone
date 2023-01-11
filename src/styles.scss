@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+//COLOR
+:root {
+    --bg-grey: rgb(255, 255, 255);
+    --bg-dark: rgb(255, 255, 255);
+}
+
+//MARGIN
+:root {
+    --m5: 5px;
+    --m12: 12.5px;
+    --m25: 25px;
+    --m50: 50px;
+    --m5p: 5%;
+    --m10p: 10%;
+}
+
+//FONT SIZE
+:root {
+    --fs-m: 12px;
+    --fs-l: 16px;
+    --fs-xl: 24px;
+    --fs-hl: 30px;
+}
