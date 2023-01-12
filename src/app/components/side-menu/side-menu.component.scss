@@ -22,7 +22,7 @@
     font-size: var(--fs-xl);
     display: flex;
     justify-content: center;
-    height: 100px;
+    height: 30px;
     width: 100%;
     margin-bottom: var(--m10p);
 
@@ -32,10 +32,11 @@
 
     p {
         color: var(--bg-second);
-
+        margin-top: 50px;
     }
 }
 
 .material-icons {
     color: var(--bg-second);
+
 }
