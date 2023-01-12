@@ -1,1 +1,23 @@
-<p>sign-up works!</p>
+<div class="wrapper">
+    <h1>Slack-Clone registration</h1>
+    <form class="reg-form" ngNativeValidate>
+        <mat-form-field appearance="outline">
+            <mat-label>Display name</mat-label>
+            <input matInput placeholder="Placeholder" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Placeholder" required type="email">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Placeholder" required type="password">
+        </mat-form-field>
+        <div class="button-container">
+            <button mat-raised-button>Sign up</button>
+            <button mat-raised-button>Try as guest</button>
+        </div>
+    </form>
+</div>
