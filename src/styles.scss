@@ -9,8 +9,11 @@
 
 //COLOR
 :root {
-    --bg-grey: rgb(255, 255, 255);
-    --bg-dark: rgb(255, 255, 255);
+    --marker: rgb(147, 214, 224);
+    --font: rgb(203, 229, 233);
+    --bg-light: rgb(7, 27, 30);
+    --bg-dark: rgb(6, 18, 20);
+    --bg-second: rgb(148, 213, 223);
 }
 
 //MARGIN
@@ -19,8 +22,12 @@
     --m12: 12.5px;
     --m25: 25px;
     --m50: 50px;
+
     --m5p: 5%;
     --m10p: 10%;
+    --m15p: 15%;
+    --m20p: 20%;
+    --m50p: 50%;
 }
 
 //FONT SIZE
@@ -30,3 +37,5 @@
     --fs-xl: 24px;
     --fs-hl: 30px;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

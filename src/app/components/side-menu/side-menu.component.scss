@@ -1,0 +1,32 @@
+.side-nav {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    width: var(--m15p);
+    background-color: var(--bg-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.channel-list {
+    display: flex;
+    flex-direction: column;
+    max-height: var(--m50p);
+    width: 100%;
+    background-color: gray;
+}
+
+.log-out {
+    height: 100px;
+    width: 100%;
+    margin-bottom: var(--m10p);
+
+    p {
+        color: var(--bg-second);
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
