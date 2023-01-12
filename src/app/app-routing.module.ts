@@ -5,6 +5,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LoggedWrapperComponent } from './components/logged-wrapper/logged-wrapper.component';
 
 const routes: Routes = [
+  { path: '', component: WelcomeComponent },
   { path: 'welcome', component: WelcomeComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'chat', component: LoggedWrapperComponent }
