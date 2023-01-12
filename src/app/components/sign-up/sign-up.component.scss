@@ -1,0 +1,32 @@
+
+button {
+    background-color: rgb(148 213 223) !important;
+    width: 50%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    gap: 32px;
+}
+
+.reg-form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 16px;
+}
+
+
+
+
