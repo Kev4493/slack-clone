@@ -12,10 +12,21 @@
 
 .channel-list {
     display: flex;
+    align-items: center;
     flex-direction: column;
     max-height: var(--m50p);
+    margin-top: var(--m10p);
     width: 100%;
-    background-color: gray;
+    color: var(--bg-second);
+}
+
+.create-channel {
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .log-out {
@@ -32,11 +43,11 @@
 
     p {
         color: var(--bg-second);
-        margin-top: 50px;
+        margin-top: 3px;
+        margin-left: 1px;
     }
 }
 
 .material-icons {
     color: var(--bg-second);
-
 }
