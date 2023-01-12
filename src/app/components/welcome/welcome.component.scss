@@ -8,11 +8,15 @@
 
 
     .welcome-text-container {
+        display: flex;
+        flex-direction: column;
+
         h1 {
             font-size: 4rem;
             text-transform: uppercase;
             color: #40D9E1;
             font-family: 'Poppins';
+            font-weight: 700;
         }
 
         p {
@@ -27,10 +31,22 @@
             width: 200px;
             height: 50px;
             border-radius: 12px;
+            font-family: 'Poppins';
         }
+
+        // img {
+        //     width: 500px;
+        //     position: absolute;
+        //     bottom: 0;
+        //     left: 0;
+        // }
+
     }
 
     img {
-        width: 450px;
+        width: 775px;
+        position: absolute;
+        top: 94px;
+        right: 0;
     }
 }
