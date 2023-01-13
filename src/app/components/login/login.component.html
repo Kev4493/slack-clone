@@ -1,0 +1,34 @@
+<div class="wrapper">
+    <h1>Sign in to Slack-Clone</h1>
+    <div class="form-container">
+     
+
+        <div class="google-container">
+            <button class="google-login" mat-stroked-button>
+                <img class="google-icon" src="../../../assets/img/icons/googleicon.png" />
+                <span class="continue-text">Continue with Google</span>
+            </button>
+            <span class="bottom-text">Or</span>
+        </div>
+
+        <form class="reg-form" ngNativeValidate>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password">
+            </mat-form-field>
+            <div class="button-container">
+                <button mat-raised-button class="login">Login</button>
+                <button mat-raised-button class="guest-login" routerLink="/chat">Try as guest</button>
+            </div>
+        </form>
+        <div class="login-container">
+            <a href="#">Forgot password?</a>
+            <a routerLink="/sign-up">Sign up</a>
+        </div>
+    </div>
+</div>

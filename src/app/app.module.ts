@@ -19,6 +19,8 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { DialogLoginGuestComponent } from './components/dialog-login-guest/dialog-login-guest.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -33,7 +35,9 @@ import { MatButtonModule } from '@angular/material/button';
     PrivacyComponent,
     ChannelsComponent,
     LoggedWrapperComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    DialogLoginGuestComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

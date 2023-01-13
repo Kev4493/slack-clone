@@ -1,3 +1,12 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    gap: 32px;
+}
 
 a, a:visited {
     color: #40D9E1;
@@ -26,25 +35,6 @@ button {
     font-family: 'Poppins';
 }
 
-.sign-up {
-    background-color: #10151F !important;
-    color: #fff !important;
-}
-
-.guest-login {
-    background-color: #40D9E1 !important;
-}
-
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    gap: 32px;
-}
-
 .form-container {
     display: flex;
     flex-direction: column;
@@ -52,12 +42,14 @@ button {
     width: 25%;
     min-width: 400px;
     font-size: 16px;
+    gap: 32px;
+ 
 }
 
 .reg-form {
     display: flex;
     flex-direction: column;
-    width: 100%
+    width: 100%;
 }
 
 .button-container {
@@ -65,29 +57,20 @@ button {
     justify-content: space-between;
     width: 100%;
     gap: 16px;
+    
 }
 
 .google-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
-    margin-top: 48px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     width: 100%;
 }
 
-.top-text {
-    font-size: 1rem;
-    font-weight: 700;
-    display: flex;
-    justify-content: center;
-    background-color: #fff;
-    width: 40px;
-    transform: translateY(-10px);
-}
 .google-login {
     position: relative;
-    margin-top: 16px;
+    margin-bottom: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,8 +95,26 @@ button {
     left: -32px;
     margin-right: 16px;
     height: 25px;
-    width: auto;
-   
+    width: auto; 
+}
+
+.bottom-text {
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    width: 40px;
+    transform: translateY(10px);
+}
+
+.login {
+    background-color: #10151F !important;
+    color: #fff !important;
+}
+
+.guest-login {
+    background-color: #40D9E1 !important;
 }
 
 .login-container {
@@ -124,8 +125,6 @@ button {
     gap: 16px
 }
 
-.all-ready-use {
-    font-weight: 500;
-}
-
-
+// .all-ready-use {
+//     font-weight: 500;
+// }

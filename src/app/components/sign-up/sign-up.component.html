@@ -1,23 +1,39 @@
 <div class="wrapper">
     <h1>Slack-Clone registration</h1>
-    <form class="reg-form" ngNativeValidate>
-        <mat-form-field appearance="outline">
-            <mat-label>Display name</mat-label>
-            <input matInput placeholder="Placeholder" required>
-        </mat-form-field>
+    <div class="form-container">
+        <form class="reg-form" ngNativeValidate>
+            <mat-form-field appearance="outline">
+                <mat-label>Display name</mat-label>
+                <input matInput>
+            </mat-form-field>
 
-        <mat-form-field appearance="outline">
-            <mat-label>Email</mat-label>
-            <input matInput placeholder="Placeholder" required type="email">
-        </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email">
+            </mat-form-field>
 
-        <mat-form-field appearance="outline">
-            <mat-label>Password</mat-label>
-            <input matInput placeholder="Placeholder" required type="password">
-        </mat-form-field>
-        <div class="button-container">
-            <button mat-raised-button>Sign up</button>
-            <button mat-raised-button>Try as guest</button>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password">
+            </mat-form-field>
+            <div class="button-container">
+                <button mat-raised-button class="sign-up">Sign up</button>
+                <button mat-raised-button class="guest-login" routerLink="/chat">Try as guest</button>
+            </div>
+        </form>
+
+        <div class="google-container">
+            <span class="top-text">Or</span>
+            <button class="google-login" mat-stroked-button>
+                <img class="google-icon" src="../../../assets/img/icons/googleicon.png" />
+                <span class="continue-text">Continue with Google</span>
+            </button>
         </div>
-    </form>
+
+        <div class="login-container">
+            <span class="all-ready-use">You already use Slack-Clone?</span>
+            <a routerLink="/login">Log in to an existing workspace</a>
+        </div>
+    </div>
+
 </div>
