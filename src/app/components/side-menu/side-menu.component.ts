@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 //import { NavbarComponent } from './components/navbar/navbar.component';
 
 @Component({
@@ -8,5 +10,11 @@ import { Component } from '@angular/core';
 })
 
 export class SideMenuComponent {
+  constructor(private router:Router, public afAuth:AngularFireAuth){}
+
+  logout():void{
+    this.afAuth.signOut();
+    this.router.navigate(['/'])
+  }
   
 }

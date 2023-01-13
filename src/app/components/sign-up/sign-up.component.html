@@ -1,23 +1,23 @@
 <div class="wrapper">
     <h1>Slack-Clone registration</h1>
     <div class="form-container">
-        <form class="reg-form" ngNativeValidate (submit)="onSubmit()">
+        <form [formGroup]="signForm" class="reg-form" ngNativeValidate (ngSubmit)="signup()">
             <mat-form-field appearance="outline">
                 <mat-label>Display name</mat-label>
-                <input matInput>
+                <input matInput #nameField formControlName="displayName">
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
-                <input matInput type="email">
+                <input matInput type="email"  #emailField formControlName="email">
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
-                <input matInput type="password">
+                <input matInput type="password"  #passwordField formControlName="password">
             </mat-form-field>
             <div class="button-container">
-                <button mat-raised-button class="sign-up">Sign up</button>
+                <button mat-raised-button type="submit" class="sign-up">Sign up</button>
                 <button mat-raised-button [disabled]="false" class="guest-login" (click)="openDialog()">Try as guest</button>
             </div>
         </form>

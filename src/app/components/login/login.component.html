@@ -11,15 +11,15 @@
             <span class="bottom-text">Or</span>
         </div>
 
-        <form class="reg-form" ngNativeValidate (submit)="onSubmit()">
+        <form [formGroup]="loginForm" class="reg-form" ngNativeValidate (ngSubmit)="loginUser()">
             <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
-                <input matInput type="email">
+                <input formControlName="email" matInput type="email">
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
-                <input matInput type="password">
+                <input formControlName="password" matInput type="password">
             </mat-form-field>
             <div class="button-container">
                 <button mat-raised-button class="login">Login</button>

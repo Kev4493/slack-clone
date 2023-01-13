@@ -17,6 +17,7 @@ import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { DialogLoginGuestComponent } from './components/dialog-login-guest/dialog-login-guest.component';
@@ -27,6 +28,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AngularFireModule } from '@angular/fire/compat';
 
 
 
@@ -53,14 +55,17 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatIconModule,
     MatTreeModule,
     MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
     MatDialogModule,
+    AngularFireModule.initializeApp(environment.firebase)
     
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
+   /*  provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()) */
   ],
   providers: [],
   bootstrap: [AppComponent]
