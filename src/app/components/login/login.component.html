@@ -11,7 +11,7 @@
             <span class="bottom-text">Or</span>
         </div>
 
-        <form class="reg-form" ngNativeValidate>
+        <form class="reg-form" ngNativeValidate (submit)="onSubmit()">
             <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
                 <input matInput type="email">
@@ -23,7 +23,7 @@
             </mat-form-field>
             <div class="button-container">
                 <button mat-raised-button class="login">Login</button>
-                <button mat-raised-button class="guest-login" routerLink="/chat">Try as guest</button>
+                <button mat-raised-button class="guest-login" (click)="openDialog()">Try as guest</button>
             </div>
         </form>
         <div class="login-container">

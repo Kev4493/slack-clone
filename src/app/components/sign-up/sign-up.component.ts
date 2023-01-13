@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogLoginGuestComponent } from '../dialog-login-guest/dialog-login-guest.component';
 
 @Component({
   selector: 'app-sign-up',
@@ -8,8 +9,14 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent {
 
-constructor(private router: Router) { }
+  constructor(public dialog: MatDialog) { }
 
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogLoginGuestComponent);
 
+  }
 
+  onSubmit() {
+    return false;
+  }
 }
