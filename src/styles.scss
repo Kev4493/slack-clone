@@ -100,3 +100,5 @@ body {
         url('../src/assets/fonts/poppins-v20-latin-700.svg#Poppins') format('svg');
         /* Legacy iOS */
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
