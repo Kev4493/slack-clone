@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { SignUpComponent } from '../sign-up/sign-up.component';
 
 @Component({
   selector: 'app-dialog-login-guest',
@@ -7,9 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./dialog-login-guest.component.scss']
 })
 export class DialogLoginGuestComponent {
-  constructor(public router: Router) { }
+  displayName: string;
+
+  constructor(private router: Router, public dialogRef: MatDialogRef<SignUpComponent>) { }
 
   openUrl() {
-    this.router.navigateByUrl('/chat');
+    console.log('Guest name is: ', this.displayName);
+    this.router.navigate(['/chat']);
+    this.dialogRef.close();
   }
 }

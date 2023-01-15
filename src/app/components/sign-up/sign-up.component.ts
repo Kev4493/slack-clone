@@ -18,11 +18,10 @@ export class SignUpComponent {
   @ViewChild('passwordField') messageField!:ElementRef;
   signForm!: FormGroup;
 
-  constructor(public dialog: MatDialog, private router:Router,private afAuth: AngularFireAuth) { }
+  constructor(public dialog: MatDialog, private router:Router, private afAuth: AngularFireAuth) { }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogLoginGuestComponent);
-
   }
 
   ngOnInit(){
