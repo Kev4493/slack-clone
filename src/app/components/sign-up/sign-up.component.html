@@ -1,7 +1,7 @@
 <div class="wrapper">
     <h1>Slack-Clone registration</h1>
     <div class="form-container">
-        <form [formGroup]="signForm" class="reg-form" ngNativeValidate (ngSubmit)="signup()">
+        <form [formGroup]="signForm" class="reg-form" ngNativeValidate (ngSubmit)="signUp()">
             <mat-form-field appearance="outline">
                 <mat-label>Display name</mat-label>
                 <input matInput #nameField formControlName="displayName">

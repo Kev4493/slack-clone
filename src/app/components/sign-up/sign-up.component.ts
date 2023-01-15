@@ -34,7 +34,7 @@ export class SignUpComponent {
   }
 
 
-  signup() {
+  signUp() {
     if (this.signForm.invalid) {
       return;
     }
