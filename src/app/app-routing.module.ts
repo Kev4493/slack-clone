@@ -6,7 +6,7 @@ import { LoggedWrapperComponent } from './components/logged-wrapper/logged-wrapp
 import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  { path: '', component: WelcomeComponent },
+  { path: '', component: WelcomeComponent, pathMatch: 'full' },
   { path: 'welcome', component: WelcomeComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'login', component: LoginComponent },

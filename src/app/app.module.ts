@@ -30,6 +30,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AngularFireModule } from '@angular/fire/compat';
 import { DialogCreateChannelComponent } from './components/dialog-create-channel/dialog-create-channel.component';
+import { CurrentChannelComponent } from './components/current-channel/current-channel.component';
 
 
 
@@ -47,7 +48,8 @@ import { DialogCreateChannelComponent } from './components/dialog-create-channel
     DialogLoginGuestComponent,
     LoginComponent,
     DialogCreateChannelComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    CurrentChannelComponent
   ],
   imports: [
     BrowserModule,
