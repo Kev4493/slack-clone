@@ -1,10 +1,10 @@
 <div class="side-nav"> <!--  [ngClass]="!menuIsOpen ? 'd-none' : 'active'"> -->
 
     <div class="channel-list">
-        <app-channels></app-channels>
+        <app-channels [channels]="db"></app-channels>
         <div class="create-channel">
             <mat-icon>add</mat-icon>
-            <span>Create new Channel</span>
+            <span (click)="createChannel()">Create new Channel</span>
         </div>
     </div>
     <div class="log-out" (click)="logout()">

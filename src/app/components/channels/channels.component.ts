@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-channels',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./channels.component.scss']
 })
 export class ChannelsComponent {
-
+@Input() channels: any[];
 }
