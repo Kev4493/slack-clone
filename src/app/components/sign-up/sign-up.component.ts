@@ -41,7 +41,8 @@ export class SignUpComponent {
     this.afAuth
     .createUserWithEmailAndPassword(this.signForm.value.email, this.signForm.value.password)
     .then(res => {
-      if (res.credential == null) {       
+      if (res.credential == null) {   
+        res.user.updateProfile({displayName: this.signForm.value.displayName});    
         console.log('You are Successfully signed up!', res);
         this.router.navigate(['/chat'])
       }
