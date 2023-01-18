@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <h1>Create new channel</h1>
+  <p>Please enter the name of the channel</p>
+  <mat-form-field appearance="outline">
+    <mat-label>Channel name</mat-label>
+    <input required matInput [(ngModel)]="data.name">
+  </mat-form-field>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()" class="cancel">Cancel</button>
+    <button mat-button [mat-dialog-close]="data.name" cdkFocusInitial class="add-channel">Add Channel</button>
+  </div>
+</div>
