@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Channel } from 'src/app/models/channel.class';
 import { DialogCreateChannelComponent } from '../dialog-create-channel/dialog-create-channel.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ChannelService } from 'src/app/services/channel.service';
 //import { NavbarComponent } from './components/navbar/navbar.component';
 
 
@@ -14,14 +15,25 @@ import { MatDialog } from '@angular/material/dialog';
 })
 
 export class SideMenuComponent {
-  constructor(private router: Router, public afAuth: AngularFireAuth, public dialog: MatDialog) { }
-  name: string;
+  constructor(private router: Router, public afAuth: AngularFireAuth, public dialog: MatDialog, public channel: ChannelService) { }
+  // id: any;
+  // name: string;
+
 
   /// Dient als temporärer Datenbankersatz zum entwickeln der Channels ///
   db: any[] = [
-    { name: 'welcome' },
-    { name: 'coding' },
-    { name: 'gaming' }
+    {
+      id: 'welcome',
+      name: 'welcome'
+    },
+    {
+      id: 'coding',
+      name: 'coding'
+    },
+    {
+      id: 'gaming',
+      name: 'gaming'
+    }
   ];
   ///////////////////////////////////////////////////////////////////////
 
@@ -34,22 +46,23 @@ export class SideMenuComponent {
 
   openDialog() {
     const dialogRef = this.dialog.open(DialogCreateChannelComponent, {
-      data: { name: this.name },
+      data: { name: this.channel.name },
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.name = result;
+      this.channel.name = result;
       this.createNewChannel();
     });
   }
 
 
   createNewChannel() {
-    if (this.name) {
-      let channel = new Channel(this.name);
+    if (this.channel.name) {
+      this.channel.id = this.channel.name;
+      let channel = new Channel(this.channel.name, this.channel.id);
       this.db.push(channel);
     }
-    this.name = "";
+    this.channel.name = "";
     console.log(this.db);
   }
 }

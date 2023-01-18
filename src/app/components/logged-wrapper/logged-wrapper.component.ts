@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ChannelService } from 'src/app/services/channel.service';
 
 @Component({
   selector: 'app-logged-wrapper',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class LoggedWrapperComponent {
 
+constructor(public channel: ChannelService) {
+
+}
 }
