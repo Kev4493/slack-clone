@@ -4,6 +4,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LoggedWrapperComponent } from './components/logged-wrapper/logged-wrapper.component';
 import { LoginComponent } from './components/login/login.component';
+import { CurrentChannelComponent } from './components/current-channel/current-channel.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent, pathMatch: 'full' },
@@ -11,7 +12,7 @@ const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
   { path: 'chat', component: LoggedWrapperComponent },
-  { path: '**', component: WelcomeComponent},
+  { path: '**', component: WelcomeComponent }
 ];
 
 @NgModule({
