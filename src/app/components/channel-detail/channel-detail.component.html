@@ -17,11 +17,13 @@
 
         <!-- Textfield with Floating Label -->
 
-        <!--  <div>
+        <div *ngFor="let message of allMessages.messageText">
+            <span class="color-gray"><i>{{ message }}</i></span>
 
-             <span class="color-gray">[{{ message.created_at}}]</span>{{message.author}}: <i>{{ message.text }}</i> 
-            <span class="color-gray"> [(ngModel)] = "message.author"</span> [(ngModel)] = "message.created_at": <i>[(ngModel)] = "message.text"</i>
-        </div> -->
+            <!-- <span class="color-gray">[{{ allMessages.created_at}}]</span> -->
+            <!-- {{allMessages.author}}: -->
+
+        </div>
 
         <div mat-dialog-content>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">

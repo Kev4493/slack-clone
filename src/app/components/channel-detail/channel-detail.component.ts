@@ -18,6 +18,7 @@ export class ChannelDetailComponent implements OnInit {
   user = this.auth.currentUser;
   d = new Date();
   time = this.d.getTime()
+  allMessages: any = [];
   @ViewChild('textMessage') textMessage!: ElementRef;
   constructor(private route: ActivatedRoute, public firestore: AngularFirestore) {
 
@@ -43,28 +44,10 @@ export class ChannelDetailComponent implements OnInit {
           this.message.author = text.author;
           this.message.created_at = text.created_at;
 
-          /*    this.message.channelName 
-             this.message.created_at.push(this.time); 
-             this.message.messageText.push(text.messageText);
-             this.message.author.push(this.user.displayName); 
-             
-             });*/
-
-
 
         })
     })
   }
-
-  /*   getChannel(){
-      if (this.channelId) {
-         this.firestore.collection('users').doc(this.channelId).valueChanges().subscribe((message:any) => {
-        this.message = new Message(message);
-      });
-      }
-     
-    } */
-
 
 
     newMessage(){
@@ -77,13 +60,6 @@ export class ChannelDetailComponent implements OnInit {
     this.loading = true;
     this.saveMessage();
 
-    //Update channel Message in firestore
-    /*  if (textMessage.value && this.channelId) {
-       console.log('Message content',textMessage.value);
-       
-       this.saveMessage();    
-     } */
-
   }
 
   saveMessage() {
@@ -93,10 +69,18 @@ export class ChannelDetailComponent implements OnInit {
     this.message.messageText.push(textMessage.value);
     this.message.author.push(this.user.displayName);
     this.message.created_at.push(this.time);  
+    this.allMessages = this.message;
 
     this.firestore.collection('channels').doc(this.channelId).update(this.message.toJSON()).then((result: any) => {
       console.log('channel update', result);
-
+      console.log('************author:*************',this.allMessages.messageText);
+      if (result == null) {
+        console.log('result is null or undefined');
+      } else {
+       
+        
+      }
+      
       this.loading = false;
     });
 
