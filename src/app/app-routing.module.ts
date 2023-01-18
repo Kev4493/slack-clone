@@ -7,7 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ChannelDetailComponent } from './components/channel-detail/channel-detail.component';
 
 const routes: Routes = [
-  { path: '', component: WelcomeComponent },
+  { path: '', component: WelcomeComponent, pathMatch: 'full' },
   { path: 'welcome', component: WelcomeComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
