@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { getAuth } from "firebase/auth";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-channel-detail',
@@ -11,6 +12,7 @@ import { getAuth } from "firebase/auth";
   styleUrls: ['./channel-detail.component.scss']
 })
 export class ChannelDetailComponent implements OnInit {
+
   channelId: any = '';
   message: Message = new Message();
   loading = false;
@@ -69,11 +71,14 @@ export class ChannelDetailComponent implements OnInit {
     this.message.messageText.push(textMessage.value);
     this.message.author.push(this.user.displayName);
     this.message.created_at.push(this.time);  
-    this.allMessages = this.message;
+    this.allMessages = this.message.toJSON();
+    /* console.log('************all messages:*************',this.allMessages.author[1]); */
+   
 
     this.firestore.collection('channels').doc(this.channelId).update(this.message.toJSON()).then((result: any) => {
       console.log('channel update', result);
-      console.log('************author:*************',this.allMessages.messageText);
+      
+      
       if (result == null) {
         console.log('result is null or undefined');
       } else {

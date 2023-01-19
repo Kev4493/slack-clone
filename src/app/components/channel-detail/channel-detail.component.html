@@ -10,6 +10,16 @@
     .color-gray {
         color: gray;
     }
+    
+    .textField {
+        display: flex;
+        gap: 12px;
+    }
+    
+    .textField-child {
+        display: flex;
+        flex-direction: column;
+    }
 </style>
 
 <main class="mdl-layout__content">
@@ -17,13 +27,31 @@
 
         <!-- Textfield with Floating Label -->
 
-        <div *ngFor="let message of allMessages.messageText">
-            <span class="color-gray"><i>{{ message }}</i></span>
+        <div class="textField">
+            <div>
+                <div *ngFor="let created_at of allMessages.created_at" class=" textField-child">
+                    [{{ created_at }}]
+                </div>
+            </div>
 
-            <!-- <span class="color-gray">[{{ allMessages.created_at}}]</span> -->
-            <!-- {{allMessages.author}}: -->
+            <div>
+                <div *ngFor="let author of allMessages.author" class="textField-child">{{ author }}:</div>
+            </div>
+
+            <div>
+                <div *ngFor="let message of allMessages.messageText" class=" textField-child">
+                    <i>{{ message }}</i>
+                </div>
+            </div>
+
 
         </div>
+
+        <!--  <div *ngFor="let message of allMessages">
+            <div *ngFor="let created_at of message.created_at " class="color-gray">[{{ created_at}}]</div>
+            <span *ngFor="let author of message.author|keyvalue">{{ author.value }}:</span> 
+            <i *ngFor="let messageText of message.messageText|keyvalue">{{ messageText.value }}</i>
+        </div> -->
 
         <div mat-dialog-content>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
