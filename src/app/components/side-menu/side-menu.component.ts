@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Router } from '@angular/router';
-import { Channel } from 'src/app/models/channel.class';
-import { DialogCreateChannelComponent } from '../dialog-create-channel/dialog-create-channel.component';
 import { MatDialog } from '@angular/material/dialog';
-import { ChannelService } from 'src/app/services/channel.service';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Router } from '@angular/router';
+import { AddChannelComponent } from '../add-channel/add-channel.component';
 //import { NavbarComponent } from './components/navbar/navbar.component';
 
 
@@ -15,9 +14,8 @@ import { ChannelService } from 'src/app/services/channel.service';
 })
 
 export class SideMenuComponent {
-  constructor(private router: Router, public afAuth: AngularFireAuth, public dialog: MatDialog, public channel: ChannelService) { }
-  // id: any;
-  // name: string;
+  constructor(private router:Router, public afAuth:AngularFireAuth,public dialog: MatDialog, public firestore:AngularFirestore){}
+ 
 
 
   /// Dient als temporärer Datenbankersatz zum entwickeln der Channels ///
@@ -43,26 +41,9 @@ export class SideMenuComponent {
     this.router.navigate(['/'])
   }
 
+  openDialog(){
+    this.dialog.open(AddChannelComponent);
 
-  openDialog() {
-    const dialogRef = this.dialog.open(DialogCreateChannelComponent, {
-      data: { name: this.channel.name },
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      this.channel.name = result;
-      this.createNewChannel();
-    });
   }
-
-
-  createNewChannel() {
-    if (this.channel.name) {
-      this.channel.id = this.channel.name;
-      let channel = new Channel(this.channel.name, this.channel.id);
-      this.db.push(channel);
-    }
-    this.channel.name = "";
-    console.log(this.db);
-  }
+  
 }

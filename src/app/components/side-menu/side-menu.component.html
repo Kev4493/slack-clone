@@ -1,8 +1,9 @@
-<div class="side-nav"> <!--  [ngClass]="!menuIsOpen ? 'd-none' : 'active'"> -->
+<div class="side-nav">
+    <!--  [ngClass]="!menuIsOpen ? 'd-none' : 'active'"> -->
 
     <div class="channel-list">
-        <app-channels [channels]="db"></app-channels>
-        <div class="create-channel">
+        <app-channels></app-channels>
+        <div (click)="openDialog()" class="create-channel">
             <mat-icon>add</mat-icon>
             <span (click)="openDialog()">Create new Channel</span>
         </div>

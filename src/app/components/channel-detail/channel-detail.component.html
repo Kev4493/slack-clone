@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+<style>
+    .page-content {
+        padding: 100px 100px;
+    }
+    
+    .color-gray {
+        color: gray;
+    }
+</style>
+
+<main class="mdl-layout__content">
+    <div class="page-content">
+
+        <!-- Textfield with Floating Label -->
+
+        <div *ngFor="let message of allMessages.messageText">
+            <span class="color-gray"><i>{{ message }}</i></span>
+
+            <!-- <span class="color-gray">[{{ allMessages.created_at}}]</span> -->
+            <!-- {{allMessages.author}}: -->
+
+        </div>
+
+        <div mat-dialog-content>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <mat-form-field class="mr-16" appearance="outline">
+                    <mat-label>Message</mat-label>
+                    <input class="mdl-textfield__input" id="MessageTextiD" #textMessage matInput placeholder="Text...">
+                </mat-form-field>
+            </div>
+        </div>
+        <!-- Accent-colored raised button with ripple -->
+        <div mat-dialog-actions>
+            <button (click)="sendMessage()" cdkFocusInitial class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    send
+            </button>
+        </div>
+
+
+
+    </div>
+</main>
