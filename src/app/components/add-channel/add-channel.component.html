@@ -1,6 +1,7 @@
 <div class="dialog-container">
     <!--  <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar> -->
     <h1 mat-dialog-title>Add Channel</h1>
+    <p>Please enter the name of the channel</p>
     <div mat-dialog-content>
         <div>
             <mat-form-field class="mr-16" appearance="outline">
@@ -13,8 +14,8 @@
 
     </div>
     <div mat-dialog-actions>
-        <button [disabled]="loading" (click)="dialog.close()" mat-button>Cancel</button>
-        <button [disabled]="loading" mat-button (click)="saveUser()" cdkFocusInitial>Save</button>
+        <button [disabled]="loading" (click)="dialog.close()" mat-button class="cancel">Cancel</button>
+        <button [disabled]="loading" mat-button (click)="saveUser()" class="add-channel" cdkFocusInitial>Save</button>
     </div>
 
 </div>

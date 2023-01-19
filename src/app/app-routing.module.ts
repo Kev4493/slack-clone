@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'chat', component: LoggedWrapperComponent },
   {path: 'channel/:id', component: ChannelDetailComponent},
   /* { path: '**', component: WelcomeComponent}, */
+  { path: '**', component: WelcomeComponent }
 ];
 
 @NgModule({
