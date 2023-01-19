@@ -1,0 +1,29 @@
+.dialog-container {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-channel {
+    background-color: #10151F !important;
+    color: #fff !important;
+}
+
+.cancel {
+    background-color: #40D9E1 !important;
+}
+
+p {
+    color: #40D9E1;
+    margin-bottom: 16px;
+}
+
+h1 {
+    margin-bottom: 8px;
+}
+
+input, ::placeholder, mat-label {
+    color: black;  
+    font-size: 12px !important;
+}
