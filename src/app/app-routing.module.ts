@@ -11,8 +11,14 @@ const routes: Routes = [
   { path: 'welcome', component: WelcomeComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'chat', component: LoggedWrapperComponent },
-  {path: 'channel/:id', component: ChannelDetailComponent},
+  {
+    path: 'chat', component: LoggedWrapperComponent, children: [
+      { path: 'channel/:id', component: ChannelDetailComponent }
+    ]
+  },
+
+
+  // {path: 'channel/:id', component: ChannelDetailComponent},
   /* { path: '**', component: WelcomeComponent}, */
   { path: '**', component: WelcomeComponent }
 ];

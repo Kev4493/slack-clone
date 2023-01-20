@@ -28,7 +28,7 @@ export class ChannelDetailComponent implements OnInit {
 
   ngOnInit() {
     this.newMessage();
-    console.log('user name', this.user.displayName)
+    // console.log('user name', this.user.displayName)
 
     this.route.paramMap.subscribe(paramMap => {
       this.channelId = paramMap.get('id');
@@ -45,7 +45,7 @@ export class ChannelDetailComponent implements OnInit {
           this.message.channelName = text.channelName;
           this.message.author = text.author;
           this.message.created_at = text.created_at;
-
+          
 
         })
     })
