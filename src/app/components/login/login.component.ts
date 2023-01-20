@@ -10,19 +10,19 @@ import { DialogLoginGuestComponent } from '../dialog-login-guest/dialog-login-gu
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent {
   loginForm!: FormGroup;
-  
-  constructor(public dialog: MatDialog,  private router:Router, private afAuth: AngularFireAuth) { 
+
+  constructor(public dialog: MatDialog, private router: Router, private afAuth: AngularFireAuth) {
     this.loginForm = new FormGroup({
-      'email': new FormControl('',[Validators.required, Validators.email]),
-      'password': new FormControl('',Validators.required)
+      'email': new FormControl('', [Validators.required, Validators.email]),
+      'password': new FormControl('', Validators.required)
     });
   }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogLoginGuestComponent);
-
   }
 
   onSubmit() {
@@ -31,13 +31,16 @@ export class LoginComponent {
 
   loginUser() {
     this.afAuth
-    .signInWithEmailAndPassword(this.loginForm.value.email, this.loginForm.value.password)
-    .then(res => {
-      this.router.navigate(['/chat']);
-    console.log('login successfull', res);
-    })
-    .catch(err => {
-    console.log('Something went wrong:',err.message);
-    });
+      .signInWithEmailAndPassword(this.loginForm.value.email, this.loginForm.value.password)
+      .then(res => {
+        this.router.navigate(['/chat']);
+        console.log('login successfull', res);
+      })
+      .catch(err => {
+        console.log('Something went wrong:', err.message);
+      });
   }
+
+
+  
 }
