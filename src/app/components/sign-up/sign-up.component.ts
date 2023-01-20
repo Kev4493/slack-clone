@@ -18,11 +18,14 @@ export class SignUpComponent {
   @ViewChild('passwordField') messageField!: ElementRef;
   signForm!: FormGroup;
 
+<<<<<<< HEAD
   constructor(public dialog: MatDialog, private router: Router, private afAuth: AngularFireAuth) { }
+=======
+  constructor(public dialog: MatDialog, private router:Router, private afAuth: AngularFireAuth) { }
+>>>>>>> 192868a6658dfdbbaea7d1194bdb84dc7be26189
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogLoginGuestComponent);
-
   }
 
   ngOnInit() {
@@ -35,11 +38,12 @@ export class SignUpComponent {
   }
 
 
-  signup() {
+  signUp() {
     if (this.signForm.invalid) {
       return;
     }
     this.afAuth
+<<<<<<< HEAD
       .createUserWithEmailAndPassword(this.signForm.value.email, this.signForm.value.password)
       .then(res => {
         if (res.credential == null) {
@@ -51,5 +55,19 @@ export class SignUpComponent {
       .catch(error => {
         console.log('Something is wrong:', error.message);
       });
+=======
+    .createUserWithEmailAndPassword(this.signForm.value.email, this.signForm.value.password)
+    .then(res => {
+      if (res.credential == null) {   
+        res.user.updateProfile({displayName: this.signForm.value.displayName});    
+        console.log('You are Successfully signed up!', res);
+        this.router.navigate(['/chat'])
+      }
+    
+    })
+    .catch(error => {
+    console.log('Something is wrong:', error.message);
+    });
+>>>>>>> 192868a6658dfdbbaea7d1194bdb84dc7be26189
   }
 }

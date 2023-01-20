@@ -1,0 +1,21 @@
+<div class="dialog-container">
+    <!--  <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar> -->
+    <h1 mat-dialog-title>Add Channel</h1>
+    <p>Please enter the name of the channel</p>
+    <div mat-dialog-content>
+        <div>
+            <mat-form-field class="mr-16" appearance="outline">
+                <mat-label>channel name</mat-label>
+                <!-- <input [disabled]="loading" [(ngModel)]="user.firstName" matInput placeholder="channel name"> -->
+                <input [disabled]="loading" [(ngModel)]="message.channelName" matInput placeholder="channel name">
+                <!-- <mat-hint>Please enter a name for the channel</mat-hint> -->
+            </mat-form-field>
+        </div>
+
+    </div>
+    <div mat-dialog-actions>
+        <button [disabled]="loading" (click)="dialog.close()" mat-button class="cancel">Cancel</button>
+        <button [disabled]="loading" mat-button (click)="saveUser()" class="add-channel" cdkFocusInitial>Save</button>
+    </div>
+
+</div>

@@ -29,6 +29,10 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AngularFireModule } from '@angular/fire/compat';
+import { AddChannelComponent } from './components/add-channel/add-channel.component';
+import { ChannelDetailComponent } from './components/channel-detail/channel-detail.component';
+import { DialogCreateChannelComponent } from './components/dialog-create-channel/dialog-create-channel.component';
+import { CurrentChannelComponent } from './components/current-channel/current-channel.component';
 
 
 
@@ -43,9 +47,13 @@ import { AngularFireModule } from '@angular/fire/compat';
     PrivacyComponent,
     ChannelsComponent,
     LoggedWrapperComponent,
-    SideMenuComponent,
     DialogLoginGuestComponent,
-    LoginComponent
+    LoginComponent,
+    AddChannelComponent,
+    ChannelDetailComponent,
+    DialogCreateChannelComponent,
+    SideMenuComponent,
+    CurrentChannelComponent
   ],
   imports: [
     BrowserModule,

@@ -4,14 +4,23 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LoggedWrapperComponent } from './components/logged-wrapper/logged-wrapper.component';
 import { LoginComponent } from './components/login/login.component';
+import { ChannelDetailComponent } from './components/channel-detail/channel-detail.component';
 
 const routes: Routes = [
-  { path: '', component: WelcomeComponent },
+  { path: '', component: WelcomeComponent, pathMatch: 'full' },
   { path: 'welcome', component: WelcomeComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'chat', component: LoggedWrapperComponent },
-  { path: '**', component: WelcomeComponent},
+  {
+    path: 'chat', component: LoggedWrapperComponent, children: [
+      { path: 'channel/:id', component: ChannelDetailComponent }
+    ]
+  },
+
+
+  // {path: 'channel/:id', component: ChannelDetailComponent},
+  /* { path: '**', component: WelcomeComponent}, */
+  { path: '**', component: WelcomeComponent }
 ];
 
 @NgModule({
