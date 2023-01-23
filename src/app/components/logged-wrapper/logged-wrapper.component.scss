@@ -2,26 +2,71 @@
     height: 100vh;
 }
 
-.router-container {
-    position: fixed;
-    background-color: aquamarine;
-}
-
-.mat-navbar {
-    background-color: var(--bg-dark);
-}
-
+//SIDENAV_LEFT
 .mat-sidenav {
     background-color: var(--bg-dark);
     color: var(--bg-second);
 }
 
-.mat-icon {
-    color: var(--bg-second);
-}
-
 .channel-container {
     margin-top: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.add-channel-btn {
+    background-color: rgb(64, 217, 225) !important;
+    border-radius: 12px;
+
+    mat-icon {
+        color: var(--bg-dark);
+    }
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+}
+
+.logout {
+    width: 100%;
+    position: absolute;
+    bottom: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout-btn {
+    background-color: rgb(64, 217, 225) !important;
+    border-radius: 12px;
+
+    mat-icon {
+        color: var(--bg-dark);
+    }
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+}
+
+//NAVBAR_TOP
+
+.mat-navbar {
+    background-color: var(--bg-dark);
+}
+
+.mat-toolbar-row {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.mat-menu-icon {
+    color: var(--bg-second);
 }
 
 .logo {
@@ -55,24 +100,5 @@
         &:hover {
             cursor: pointer;
         }
-    }
-}
-
-.add-channel-btn {
-    &:hover {
-        cursor: pointer;
-        transform: scale(1.05);
-    }
-}
-
-.logout {
-    position: absolute;
-    bottom: 56px;
-}
-
-.logout-btn {
-    &:hover {
-        cursor: pointer;
-        transform: scale(1.05);
     }
 }

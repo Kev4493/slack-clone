@@ -2,32 +2,6 @@
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
-<style>
-    .page-content {
-        padding: 100px 100px;
-    }
-    
-    .color-gray {
-        color: gray;
-    }
-    
-    .textField {
-        display: flex;
-        gap: 12px;
-    }
-    
-    .textField-child {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .test {
-        margin-top: 80px;
-        margin-left: 100px;
-        color: green;
-    }
-</style>
-
 <main class="mdl-layout__content">
     <h1 class="test">{{channelId}}</h1>
     <div class="page-content">
@@ -55,7 +29,7 @@
         </div>
 
         <!--  <div *ngFor="let message of allMessages">
-            <div *ngFor="let created_at of message.created_at " class="color-gray">[{{ created_at}}]</div>
+            <div *ngFor="let created_at of message.created_at " class="color-gray">[{{ created_at}}]</div>      WAS OUTCOMMENT
             <span *ngFor="let author of message.author|keyvalue">{{ author.value }}:</span> 
             <i *ngFor="let messageText of message.messageText|keyvalue">{{ messageText.value }}</i>
         </div> -->
@@ -70,8 +44,9 @@
         </div>
         <!-- Accent-colored raised button with ripple -->
         <div mat-dialog-actions>
-            <button (click)="sendMessage()" cdkFocusInitial class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                    send
+            <button (click)="sendMessage()" cdkFocusInitial
+                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                send
             </button>
         </div>
 

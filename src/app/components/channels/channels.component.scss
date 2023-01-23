@@ -1,5 +1,7 @@
 .channel-list-ul{
+    padding-inline-start: 0px;
     li{
+        height: 30px;
         list-style: none;
         &:hover{
             transform: scale(1.05);

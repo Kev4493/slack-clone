@@ -126,13 +126,16 @@ button {
 .login {
     background-color: #10151F !important;
     color: #fff !important;
+
     &:hover {
         transform: scale(1.05);
     }
 }
 
 .guest-login {
-    background-color: #40D9E1 !important;
+    border-radius: 12px;
+    background-color: rgb(64, 217, 225) !important;
+
     &:hover {
         transform: scale(1.05);
     }
@@ -145,7 +148,3 @@ button {
     margin-top: 32px;
     gap: 16px
 }
-
-// .all-ready-use {
-//     font-weight: 500;
-// }
