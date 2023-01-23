@@ -1,19 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AddChannelComponent } from '../add-channel/add-channel.component';
 import { GuestLoginService } from 'src/app/services/guest-login.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { MatDialog } from '@angular/material/dialog';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
-/* import { ChannelService } from 'src/app/services/channel.service'; */
+import { ChannelsComponent } from '../channels/channels.component';
+//import { ChannelService } from 'src/app/services/channel.service';
 
 @Component({
   selector: 'app-logged-wrapper',
   templateUrl: './logged-wrapper.component.html',
   styleUrls: ['./logged-wrapper.component.scss']
 })
-export class LoggedWrapperComponent {
+export class LoggedWrapperComponent implements OnInit {
   userName: string;
+
   db: any[] = [
     {
       id: 'welcome',
@@ -28,7 +30,9 @@ export class LoggedWrapperComponent {
       name: 'gaming'
     }
   ];
+
   constructor(
+    public channel: ChannelsComponent,
     public guestUser: GuestLoginService,
     private router: Router,
     public afAuth: AngularFireAuth,
@@ -37,11 +41,15 @@ export class LoggedWrapperComponent {
     this.checkGuestUserisLogin();
   }
 
+  ngOnInit(): void {
+    console.log(this.channel.allChannels);
+  }
+
   checkGuestUserisLogin() {
     if (this.guestUser.displayName) {
       this.userName = this.guestUser.displayName;
     } else {
-      this.userName = 'Jahleel';
+      this.userName = 'Admin';
     }
   }
 

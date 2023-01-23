@@ -79,7 +79,9 @@ import { CurrentChannelComponent } from './components/current-channel/current-ch
      provideDatabase(() => getDatabase()),
      provideFirestore(() => getFirestore()) */
   ],
-  providers: [],
+  providers: [
+    ChannelsComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

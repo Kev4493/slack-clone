@@ -1,18 +1,14 @@
 <mat-drawer-container class="mat-drawer-container" autosize>
     <mat-drawer #drawer class="mat-sidenav" mode="side">
-        <h2>Channel-List</h2>
         <div class="channel-container">
-            <ul class="channel-list">
-                <li *ngFor="let channel of db">{{ channel.name }}</li>
-            </ul>
+            <h2>Channels</h2>
+            <app-channels></app-channels>
             <button mat-raised-button class="add-channel-btn" (click)="addChannel()">
                 <mat-icon aria-hidden="false" fontIcon="add"></mat-icon>
                 Add Channel
             </button>
         </div>
-        <button mat-raised-button>
-            Toggle extra text
-        </button>
+        
         <div class="logout">
             <button mat-raised-button class="logout-btn" (click)="logout()">
                 <mat-icon aria-hidden="false" fontIcon="logout"></mat-icon>
@@ -21,7 +17,7 @@
         </div>
     </mat-drawer>
 
-    <div class="example-sidenav-content">
+    <div class="mat-sidenav-content">
         <mat-toolbar class="mat-navbar" >
             <mat-toolbar-row>
                 <mat-icon class="mat-icon" (click)="drawer.toggle()">menu</mat-icon>
@@ -30,7 +26,7 @@
                     <h1>SlackClone</h1>
                 </div>
                 <div class="profile-picture">
-                    <span>{{userName}}</span>
+                    <span>{{ userName }}</span>
                     <img src="./assets/img/profiles/jahleel.jpg">
                 </div>
             </mat-toolbar-row>

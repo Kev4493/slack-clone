@@ -1,6 +1,5 @@
 <div class="channel-list">
-    <h2>Channels</h2>
-    <ul class="channel-list">
+    <ul class="channel-list-ul">
         <li *ngFor="let channel of allChannels" [routerLink]="['channel/' + channel.customIdName]">#{{channel.channelName}}</li>
     </ul>
 </div>

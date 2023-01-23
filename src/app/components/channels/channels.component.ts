@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -7,14 +7,17 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './channels.component.html',
   styleUrls: ['./channels.component.scss']
 })
-export class ChannelsComponent {
+export class ChannelsComponent implements OnInit {
 
   allChannels: any = [];
 
-  constructor(public dialog: MatDialog, public firestore:AngularFirestore) {}
+  constructor(
+    public dialog: MatDialog,
+    public firestore: AngularFirestore
+  ) { }
 
-  ngOnInit(){
-    this.firestore.collection('channels').valueChanges({idField: 'customIdName'}).subscribe((changes: any) =>{
+  ngOnInit(): void {
+    this.firestore.collection('channels').valueChanges({ idField: 'customIdName' }).subscribe((changes: any) => {
       console.log('received changes from DB', changes);
 
       if (changes == null) {
@@ -22,7 +25,7 @@ export class ChannelsComponent {
       } else {
         this.allChannels = changes;
       }
-       
+
     });
 
   }

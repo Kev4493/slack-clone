@@ -1,0 +1,9 @@
+.channel-list-ul{
+    li{
+        list-style: none;
+        &:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+    }
+}
