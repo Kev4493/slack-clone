@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { LoggedWrapperComponent } from '../logged-wrapper/logged-wrapper.component';
+import { LoggedWrapperComponent } from '../../components/logged-wrapper/logged-wrapper.component';
 
 export interface DialogData {
   name: string;

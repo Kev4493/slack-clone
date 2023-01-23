@@ -5,6 +5,8 @@
 
 .page-content {
     background-color: lightgrey;
+    height: 100vh;
+    display: flex;
 }
 
 .color-gray {
@@ -21,7 +23,29 @@
     flex-direction: column;
 }
 
-.test {
-    margin-top: 80px;
-    margin-left: 100px;
+.new-msg-container {
+    left: 35%;
+    position: absolute;
+    bottom: 56px;
+    margin-bottom: 56px;
+    width: 400px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.send-msg-btn {
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--bg-dark);
+    color: var(--bg-second);
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
 }

@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 /* import { AngularFireAuth } from "@angular/fire/auth"; */
 import { Router } from '@angular/router';
-import { DialogLoginGuestComponent } from '../dialog-login-guest/dialog-login-guest.component';
+import { DialogLoginGuestComponent } from '../../dialogs/dialog-login-guest/dialog-login-guest.component';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({

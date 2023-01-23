@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { SignUpComponent } from '../sign-up/sign-up.component';
+import { SignUpComponent } from '../../components/sign-up/sign-up.component';
 import { GuestLoginService } from 'src/app/services/guest-login.service';
 
 @Component({

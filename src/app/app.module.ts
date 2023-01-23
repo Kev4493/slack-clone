@@ -24,7 +24,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { DialogLoginGuestComponent } from './components/dialog-login-guest/dialog-login-guest.component';
+import { DialogLoginGuestComponent } from './dialogs/dialog-login-guest/dialog-login-guest.component';
 import { LoginComponent } from './components/login/login.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
@@ -35,8 +35,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AddChannelComponent } from './components/add-channel/add-channel.component';
 import { ChannelDetailComponent } from './components/channel-detail/channel-detail.component';
-import { DialogCreateChannelComponent } from './components/dialog-create-channel/dialog-create-channel.component';
+import { DialogCreateChannelComponent } from './dialogs/dialog-create-channel/dialog-create-channel.component';
 import { CurrentChannelComponent } from './components/current-channel/current-channel.component';
+import { ChatboxComponent } from './components/chatbox/chatbox.component';
 //FIREBASE_
 
 
@@ -55,7 +56,8 @@ import { CurrentChannelComponent } from './components/current-channel/current-ch
     AddChannelComponent,
     ChannelDetailComponent,
     DialogCreateChannelComponent,
-    CurrentChannelComponent
+    CurrentChannelComponent,
+    ChatboxComponent
   ],
   imports: [
     BrowserModule,

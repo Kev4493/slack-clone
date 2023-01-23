@@ -22,7 +22,9 @@ export class ChannelDetailComponent implements OnInit {
   time = this.d.getTime()
   allMessages: any = [];
   @ViewChild('textMessage') textMessage!: ElementRef;
-  constructor(private route: ActivatedRoute, public firestore: AngularFirestore) {
+  constructor(
+    private route: ActivatedRoute,
+    public firestore: AngularFirestore) {
 
   }
 

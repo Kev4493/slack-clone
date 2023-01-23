@@ -1,0 +1,17 @@
+<div class="chatbox">
+
+    <div mat-dialog-content>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <mat-form-field class="mr-16" appearance="outline">
+                <mat-label>Message</mat-label>
+                <input class="mdl-textfield__input" id="MessageTextiD" #textMessage matInput placeholder="Text...">
+            </mat-form-field>
+        </div>
+    </div>
+    <!--#ACCENT_COLORED RAISED BTN-->
+    <div mat-dialog-actions>
+        <button (click)="details.sendMessage()" cdkFocusInitial class="send-msg-btn">
+            send
+        </button>
+    </div>
+</div>
