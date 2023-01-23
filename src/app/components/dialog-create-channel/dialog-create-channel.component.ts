@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { SideMenuComponent } from '../side-menu/side-menu.component';
+import { LoggedWrapperComponent } from '../logged-wrapper/logged-wrapper.component';
+
 export interface DialogData {
   name: string;
 }
@@ -12,9 +13,9 @@ export interface DialogData {
 export class DialogCreateChannelComponent {
 
   constructor(
-    public dialogRef: MatDialogRef<SideMenuComponent>,
+    public dialogRef: MatDialogRef<LoggedWrapperComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
-  ) {}
+  ) { }
 
   onNoClick(): void {
     this.dialogRef.close();

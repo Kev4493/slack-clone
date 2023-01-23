@@ -1,5 +1,5 @@
-
-a, a:visited {
+a,
+a:visited {
     color: #40D9E1;
     transition: 125ms ease-in-out;
 }
@@ -23,8 +23,10 @@ h1 {
     }
 }
 
-input, ::placeholder, mat-label {
-    color: black;  
+input,
+::placeholder,
+mat-label {
+    color: black;
     font-size: 12px !important;
 }
 
@@ -37,10 +39,18 @@ button {
 .sign-up {
     background-color: #10151F !important;
     color: #fff !important;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 }
 
 .guest-login {
     background-color: #40D9E1 !important;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 }
 
 .wrapper {
@@ -93,6 +103,7 @@ button {
     width: 40px;
     transform: translateY(-10px);
 }
+
 .google-login {
     position: relative;
     margin-top: 16px;
@@ -105,10 +116,12 @@ button {
     color: #4285f4 !important;
     width: 100%;
     padding: 4px;
-   
-    
-    
-    
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+
     &:active {
         color: #4285f4;
     }
@@ -121,7 +134,7 @@ button {
     margin-right: 16px;
     height: 25px;
     width: auto;
-   
+
 }
 
 .login-container {
@@ -135,5 +148,3 @@ button {
 .all-ready-use {
     font-weight: 500;
 }
-
-

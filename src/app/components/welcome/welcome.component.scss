@@ -32,6 +32,9 @@
             height: 50px;
             border-radius: 12px;
             font-family: 'Poppins';
+            &:hover {
+                transform: scale(1.05);
+            }
         }
 
         // img {

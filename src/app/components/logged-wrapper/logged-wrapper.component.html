@@ -1,10 +1,67 @@
-<app-navbar></app-navbar>
-<app-side-menu></app-side-menu>
-<router-outlet class="test"></router-outlet>
+<!-- <div class="navbar">
+    <div class="side-menu-icon">
+        
+    </div>
+    <div class="logo">
+        <h1>SlackClone</h1>
+    </div>
+    <div class="profile-picture">
+        <span>{{userName}}</span>
+        <img src="./assets/img/profiles/jahleel.jpg">
+    </div>
+</div> -->
 
-   
+
+
+<!-- <mat-drawer-container class="sidenav-container" autosize>
+    <mat-drawer #drawer mode="side">
+        
+        
+        
+        
+
+</mat-drawer-container> -->
+
+
+<mat-drawer-container class="mat-drawer-container" autosize>
+    <mat-drawer #drawer class="mat-sidenav" mode="side">
+        <h2>Channel-List</h2>
+        <div class="channel-container">
+            <ul class="channel-list">
+                <li *ngFor="let channel of db" >{{ channel.name }}</li>
+            </ul>
+            <button mat-raised-button class="add-channel-btn" (click)="addChannel()">
+                <mat-icon aria-hidden="false" fontIcon="add"></mat-icon>
+                Add Channel
+            </button>
+        </div>
+        <button mat-raised-button>
+            Toggle extra text
+        </button>
+        <div class="logout">
+            <button mat-raised-button class="logout-btn" (click)="logout()">
+                <mat-icon aria-hidden="false" fontIcon="logout"></mat-icon>
+                Logout
+            </button>
+        </div>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+                <mat-icon class="" (click)="drawer.toggle()">menu</mat-icon>
+                
+                <h1>SlackClone</h1>
+            </mat-toolbar-row>
+        </mat-toolbar>
+
+    </div>
+
+</mat-drawer-container>
 
 
 
 
-
+<div class="router-container">
+    <router-outlet></router-outlet>
+</div>

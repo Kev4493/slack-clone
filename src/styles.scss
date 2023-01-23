@@ -18,6 +18,18 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+//HEADER
+h1 {
+    margin-top: 10px !important;
+    font-size: var(--fs-h1) !important;
+    color: var(--lightest);
+    font-weight: bold !important;
+}
+
+h2 {
+    color: var(--lightest);
+}
+
 //CLASSES
 .d-none {
     display: none !important;
@@ -30,6 +42,7 @@ body {
 
 //COLOR
 :root {
+    --lightest:rgb(64, 217, 225);
     --marker: rgb(147, 214, 224);
     --font: rgb(203, 229, 233);
     --bg-light: rgb(7, 27, 30);
@@ -57,6 +70,7 @@ body {
     --fs-l: 16px;
     --fs-xl: 24px;
     --fs-hl: 30px;
+    --fs-h1: 36px;
 }
 
 // === LOCAL FONTS: ===
@@ -78,7 +92,7 @@ body {
         url('../src/assets/fonts/poppins-v20-latin-regular.ttf') format('truetype'),
         /* Safari, Android, iOS */
         url('../src/assets/fonts/poppins-v20-latin-regular.svg#Poppins') format('svg');
-        /* Legacy iOS */
+    /* Legacy iOS */
 }
 
 /* poppins-700 - latin */
@@ -98,7 +112,15 @@ body {
         url('../src/assets/fonts/poppins-v20-latin-700.ttf') format('truetype'),
         /* Safari, Android, iOS */
         url('../src/assets/fonts/poppins-v20-latin-700.svg#Poppins') format('svg');
-        /* Legacy iOS */
+    /* Legacy iOS */
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
