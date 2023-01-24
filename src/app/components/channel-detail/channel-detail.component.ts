@@ -21,10 +21,13 @@ export class ChannelDetailComponent implements OnInit {
   d = new Date();
   time = this.d.getTime()
   allMessages: any = [];
+
   @ViewChild('textMessage') textMessage!: ElementRef;
+  
   constructor(
     private route: ActivatedRoute,
-    public firestore: AngularFirestore) {
+    public firestore: AngularFirestore,
+  ) {
 
   }
 
@@ -34,6 +37,7 @@ export class ChannelDetailComponent implements OnInit {
 
     this.route.paramMap.subscribe(paramMap => {
       this.channelId = paramMap.get('id');
+      console.log(this.channelId);
       /* this.getChannel(); */
 
       this
@@ -47,52 +51,50 @@ export class ChannelDetailComponent implements OnInit {
           this.message.channelName = text.channelName;
           this.message.author = text.author;
           this.message.created_at = text.created_at;
-          
-
-        })
-    })
+        });
+    });
+  }
+  
+  
+  
+  
+  
+  
+  //MOVE FUNCTION TO CHATBOX.TS!
+  //CREATE NEW MESSAGE
+  newMessage() {
+    this.message = new Message();
   }
 
-
-    newMessage(){
-      this.message = new Message();  
-    }
-
-
+  //SEND MESSAGE
   sendMessage() {
-
     this.loading = true;
     this.saveMessage();
-
   }
 
   saveMessage() {
-    
     let textMessage = this.textMessage.nativeElement;
 
     this.message.messageText.push(textMessage.value);
     this.message.author.push(this.user.displayName);
-    this.message.created_at.push(this.time);  
+    this.message.created_at.push(this.time);
     this.allMessages = this.message.toJSON();
     /* console.log('************all messages:*************',this.allMessages.author[1]); */
-   
-
-    this.firestore.collection('channels').doc(this.channelId).update(this.message.toJSON()).then((result: any) => {
+    this.firestore
+    .collection('channels')
+    .doc(this.channelId)
+    .update(this.message.toJSON())
+    .then((result: any) => {
       console.log('channel update', result);
-      
-      
       if (result == null) {
         console.log('result is null or undefined');
       } else {
-       
-        
       }
-      
       this.loading = false;
     });
 
-    textMessage.value ='';
-    
+    textMessage.value = '';
+
   }
 
 }

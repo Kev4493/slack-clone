@@ -1,21 +1,37 @@
 .mdl-layout__content {
     display: flex;
     flex-direction: column;
+    overflow-y: hidden !important;
 }
 
 .page-content {
-    background-color: lightgrey;
-    height: 100vh;
+    background-image: url('/assets/img/chat/chat-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    top: 65px;
     display: flex;
+    flex-direction: column;
+    padding-left: 56px*2;
+    padding-right: 56px*2;
 }
 
-.color-gray {
-    color: gray;
+.channel-id {
+    margin-top: 56px;
+    font-weight: bold;
+    font-size: var(--fs-xl);
 }
 
+//TEXT_FIELD
 .textField {
     display: flex;
+    flex-direction: column;
     gap: 12px;
+    width: 100%;
+    height: 70%;
+    overflow-y: scroll;
 }
 
 .textField-child {
@@ -23,18 +39,45 @@
     flex-direction: column;
 }
 
+//MESSAGE_LEFT
+.msg-container {
+    position: relative;
+    padding: 32px;
+    margin-top: 16px;
+    margin-left: 16px;
+    max-width: 350px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
+}
+
+.msg-creator {
+    font-weight: bold;
+    margin-bottom: var(--m5p);
+}
+
+.msg-time {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    font-weight: bold;
+}
+
+
+//CREATE_MESSAGE
 .new-msg-container {
     left: 35%;
-    position: absolute;
-    bottom: 56px;
-    margin-bottom: 56px;
+    position: fixed;
+    bottom: 32px;
     width: 400px;
-    border: 1px solid rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.01);
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 .send-msg-btn {
@@ -43,6 +86,8 @@
     border: none;
     background-color: var(--bg-dark);
     color: var(--bg-second);
+    position: absolute;
+    right: 6px;
 
     &:hover {
         cursor: pointer;

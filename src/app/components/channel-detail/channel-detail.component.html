@@ -4,10 +4,13 @@
 
 <main class="mdl-layout__content">
     <div class="page-content">
-        <h1>{{channelId}}</h1>
+        <div class="channel-id">
+            Channel-ID:
+            {{ channelId }}
+        </div>
         <!-- Textfield with Floating Label -->
         <div class="textField">
-            <div>
+            <!-- <div>
                 <div *ngFor="let created_at of allMessages.created_at" class=" textField-child">
                     [{{ created_at }}]
                 </div>
@@ -21,11 +24,82 @@
                 <div *ngFor="let message of allMessages.messageText" class=" textField-child">
                     <i>{{ message }}</i>
                 </div>
+            </div> -->
+
+            <div class="msg-container">
+                <div class="msg-creator">
+                    Max Mustermann
+                </div>
+                <div class="msg-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti tenetur aliquam ducimus alias
+                    consectetur ex maxime dicta impedit animi eius fugiat, dolore quod pariatur libero officiis quidem
+                    excepturi cupiditate eos.
+                </div>
+                <div class="msg-time">
+                    18:34
+                </div>
+            </div>
+
+            <div class="msg-container">
+                <div class="msg-creator">
+                    Max Mustermann
+                </div>
+                <div class="msg-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </div>
+                <div class="msg-time">
+                    18:34
+                </div>
+            </div>
+
+            <div class="msg-container">
+                <div class="msg-creator">
+                    Max Mustermann
+                </div>
+                <div class="msg-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </div>
+                <div class="msg-time">
+                    18:34
+                </div>
+            </div>
+
+            <div class="msg-container">
+                <div class="msg-creator">
+                    Max Mustermann
+                </div>
+                <div class="msg-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </div>
+                <div class="msg-time">
+                    18:34
+                </div>
+            </div>
+            <div class="msg-container">
+                <div class="msg-creator">
+                    Max Mustermann
+                </div>
+                <div class="msg-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </div>
+                <div class="msg-time">
+                    18:34
+                </div>
+            </div>
+            <div class="msg-container">
+                <div class="msg-creator">
+                    Max Mustermann
+                </div>
+                <div class="msg-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </div>
+                <div class="msg-time">
+                    18:34
+                </div>
             </div>
 
 
         </div>
-
         <!--  <div *ngFor="let message of allMessages">
             <div *ngFor="let created_at of message.created_at " class="color-gray">[{{ created_at}}]</div>      WAS OUTCOMMENT
             <span *ngFor="let author of message.author|keyvalue">{{ author.value }}:</span> 
@@ -35,23 +109,21 @@
         <!--#MESSAGE_FIELD-->
         <div class="new-msg-container">
             <!-- <app-chatbox></app-chatbox> -->
-            <div class="chatbox">
 
                 <div mat-dialog-content>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <mat-form-field class="mr-16" appearance="outline">
                             <mat-label>Message</mat-label>
-                            <input class="mdl-textfield__input" id="MessageTextiD" #textMessage matInput placeholder="Text...">
+                            <input class="mdl-textfield__input" id="MessageTextiD" #textMessage matInput
+                                placeholder="Text...">
                         </mat-form-field>
                     </div>
                 </div>
                 <!--#ACCENT_COLORED RAISED BTN-->
-                <div mat-dialog-actions>
-                    <button (click)="sendMessage()" cdkFocusInitial class="send-msg-btn">
-                        send
-                    </button>
-                </div>
-            </div>
+                <button (click)="sendMessage()" cdkFocusInitial class="send-msg-btn">
+                    send
+                </button>
+            
         </div>
     </div>
 </main>

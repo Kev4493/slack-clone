@@ -67,6 +67,11 @@
 
 .mat-menu-icon {
     color: var(--bg-second);
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
 }
 
 .logo {
@@ -85,7 +90,7 @@
 
     span {
         color: var(--bg-second);
-        margin-right: var(--mp);
+        margin-right: var(--m10p);
     }
 
     img {
@@ -93,12 +98,9 @@
         width: 50px;
         border-radius: 50%;
         object-fit: cover;
-        object-position: top;
+        object-position: right;
         padding: 1px;
         border: 2px solid var(--bg-second);
 
-        &:hover {
-            cursor: pointer;
-        }
     }
 }

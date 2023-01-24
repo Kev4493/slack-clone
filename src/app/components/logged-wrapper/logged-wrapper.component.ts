@@ -14,22 +14,8 @@ import { ChannelsComponent } from '../channels/channels.component';
   styleUrls: ['./logged-wrapper.component.scss']
 })
 export class LoggedWrapperComponent implements OnInit {
+  
   userName: string;
-
-  db: any[] = [
-    {
-      id: 'welcome',
-      name: 'welcome'
-    },
-    {
-      id: 'coding',
-      name: 'coding'
-    },
-    {
-      id: 'gaming',
-      name: 'gaming'
-    }
-  ];
 
   constructor(
     public channel: ChannelsComponent,
