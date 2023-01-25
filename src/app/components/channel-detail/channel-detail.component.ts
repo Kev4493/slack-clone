@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Message } from 'src/models/channel';
+import { Message } from 'src/app/models/message.class';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
@@ -47,10 +47,10 @@ export class ChannelDetailComponent implements OnInit {
         .valueChanges()
         .subscribe((text: any) => {
           console.log('channel update', text);
-          this.message.messageText = text.messageText;
+          this.message.text = text.messageText;
           this.message.channelName = text.channelName;
-          this.message.author = text.author;
-          this.message.created_at = text.created_at;
+          this.message.creator = text.author;
+          this.message.createdAt = text.created_at;
         });
     });
   }
@@ -75,9 +75,9 @@ export class ChannelDetailComponent implements OnInit {
   saveMessage() {
     let textMessage = this.textMessage.nativeElement;
 
-    this.message.messageText.push(textMessage.value);
-    this.message.author.push(this.user.displayName);
-    this.message.created_at.push(this.time);
+    this.message.text.push(textMessage.value);
+    this.message.creator.push(this.user.displayName);
+    this.message.createdAt.push(this.time);
     this.allMessages = this.message.toJSON();
     /* console.log('************all messages:*************',this.allMessages.author[1]); */
     this.firestore

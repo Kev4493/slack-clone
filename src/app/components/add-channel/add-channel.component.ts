@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MatDialogRef } from '@angular/material/dialog';
-import { Message } from 'src/models/channel';
+import { Message } from 'src/app/models/message.class';
 
 @Component({
   selector: 'app-add-channel',
