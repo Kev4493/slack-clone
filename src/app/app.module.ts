@@ -1,8 +1,9 @@
 //ANGULAR_
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+
 //ROUTING_ 
 import { AppRoutingModule } from './app-routing.module';
 

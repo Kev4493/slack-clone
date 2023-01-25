@@ -23,7 +23,7 @@ export class ChannelDetailComponent implements OnInit {
   allMessages: any = [];
 
   @ViewChild('textMessage') textMessage!: ElementRef;
-  
+
   constructor(
     private route: ActivatedRoute,
     public firestore: AngularFirestore,
@@ -33,13 +33,16 @@ export class ChannelDetailComponent implements OnInit {
 
   ngOnInit() {
     this.newMessage();
-    // console.log('user name', this.user.displayName)
+    this.getChannelId();
+  }
 
+
+  //GET CHANNEL ID
+  getChannelId() {
     this.route.paramMap.subscribe(paramMap => {
       this.channelId = paramMap.get('id');
       console.log(this.channelId);
       /* this.getChannel(); */
-
       this
         .firestore
         .collection('channels')
@@ -54,12 +57,8 @@ export class ChannelDetailComponent implements OnInit {
         });
     });
   }
-  
-  
-  
-  
-  
-  
+
+
   //MOVE FUNCTION TO CHATBOX.TS!
   //CREATE NEW MESSAGE
   newMessage() {
@@ -72,26 +71,28 @@ export class ChannelDetailComponent implements OnInit {
     this.saveMessage();
   }
 
+  //HAVE TO BE LOGGED IS (NO ADMIN) TO PUSH NEW MSG
   saveMessage() {
     let textMessage = this.textMessage.nativeElement;
 
     this.message.text.push(textMessage.value);
     this.message.creator.push(this.user.displayName);
+    console.log('creator:',this.user.displayName)
     this.message.createdAt.push(this.time);
     this.allMessages = this.message.toJSON();
     /* console.log('************all messages:*************',this.allMessages.author[1]); */
     this.firestore
-    .collection('channels')
-    .doc(this.channelId)
-    .update(this.message.toJSON())
-    .then((result: any) => {
-      console.log('channel update', result);
-      if (result == null) {
-        console.log('result is null or undefined');
-      } else {
-      }
-      this.loading = false;
-    });
+      .collection('channels')
+      .doc(this.channelId)
+      .update(this.message.toJSON())
+      .then((result: any) => {
+        console.log('channel update', result);
+        if (result == null) {
+          console.log('result is null or undefined');
+        } else {
+        }
+        this.loading = false;
+      });
 
     textMessage.value = '';
 

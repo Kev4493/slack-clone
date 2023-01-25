@@ -6,7 +6,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { ChannelListComponent } from '../channel-list/channel-list.component';
-//import { ChannelService } from 'src/app/services/channel.service';
 
 @Component({
   selector: 'app-logged-wrapper',
