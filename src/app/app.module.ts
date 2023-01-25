@@ -1,19 +1,27 @@
+//ANGULAR_
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 //ROUTING_ 
+import { AppRoutingModule } from './app-routing.module';
 
 //COMPONENTS_
-import { AppRoutingModule } from './app-routing.module';
+import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { AddChannelComponent } from './components/add-channel/add-channel.component';
+import { ChannelDetailComponent } from './components/channel-detail/channel-detail.component';
+import { DialogCreateChannelComponent } from './dialogs/dialog-create-channel/dialog-create-channel.component';
+import { CurrentChannelComponent } from './components/current-channel/current-channel.component';
+import { ChatboxComponent } from './components/chatbox/chatbox.component';
+import { DialogLoginGuestComponent } from './dialogs/dialog-login-guest/dialog-login-guest.component';
 import { ImprintComponent } from './components/imprint/imprint.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { ChannelListComponent } from './components/channel-list/channel-list.component';
 import { LoggedWrapperComponent } from './components/logged-wrapper/logged-wrapper.component';
+import { LoginComponent } from './components/login/login.component';
 
 //MAT_FORMS
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -24,23 +32,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { DialogLoginGuestComponent } from './dialogs/dialog-login-guest/dialog-login-guest.component';
-import { LoginComponent } from './components/login/login.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
+//FIREBASE_
+import { AngularFireModule } from '@angular/fire/compat';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
-import { MatDialogModule } from '@angular/material/dialog';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AddChannelComponent } from './components/add-channel/add-channel.component';
-import { ChannelDetailComponent } from './components/channel-detail/channel-detail.component';
-import { DialogCreateChannelComponent } from './dialogs/dialog-create-channel/dialog-create-channel.component';
-import { CurrentChannelComponent } from './components/current-channel/current-channel.component';
-import { ChatboxComponent } from './components/chatbox/chatbox.component';
-//FIREBASE_
-
-
 
 @NgModule({
   declarations: [

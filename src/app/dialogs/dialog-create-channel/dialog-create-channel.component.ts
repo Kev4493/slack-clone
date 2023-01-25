@@ -5,11 +5,13 @@ import { LoggedWrapperComponent } from '../../components/logged-wrapper/logged-w
 export interface DialogData {
   name: string;
 }
+
 @Component({
   selector: 'app-dialog-create-channel',
   templateUrl: './dialog-create-channel.component.html',
   styleUrls: ['./dialog-create-channel.component.scss']
 })
+
 export class DialogCreateChannelComponent {
 
   constructor(

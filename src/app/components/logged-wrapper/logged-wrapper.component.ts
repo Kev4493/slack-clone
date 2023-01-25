@@ -13,8 +13,9 @@ import { ChannelListComponent } from '../channel-list/channel-list.component';
   templateUrl: './logged-wrapper.component.html',
   styleUrls: ['./logged-wrapper.component.scss']
 })
+
 export class LoggedWrapperComponent implements OnInit {
-  
+
   userName: string;
 
   constructor(
