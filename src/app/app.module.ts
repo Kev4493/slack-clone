@@ -12,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ImprintComponent } from './components/imprint/imprint.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
-import { ChannelsComponent } from './components/channels/channels.component';
+import { ChannelListComponent } from './components/channel-list/channel-list.component';
 import { LoggedWrapperComponent } from './components/logged-wrapper/logged-wrapper.component';
 
 //MAT_FORMS
@@ -49,7 +49,7 @@ import { ChatboxComponent } from './components/chatbox/chatbox.component';
     WelcomeComponent,
     ImprintComponent,
     PrivacyComponent,
-    ChannelsComponent,
+    ChannelListComponent,
     LoggedWrapperComponent,
     DialogLoginGuestComponent,
     LoginComponent,
@@ -82,7 +82,7 @@ import { ChatboxComponent } from './components/chatbox/chatbox.component';
      provideFirestore(() => getFirestore()) */
   ],
   providers: [
-    ChannelsComponent
+    ChannelListComponent
   ],
   bootstrap: [AppComponent]
 })

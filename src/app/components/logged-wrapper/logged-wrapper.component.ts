@@ -5,7 +5,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { MatDialog } from '@angular/material/dialog';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
-import { ChannelsComponent } from '../channels/channels.component';
+import { ChannelListComponent } from '../channel-list/channel-list.component';
 //import { ChannelService } from 'src/app/services/channel.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class LoggedWrapperComponent implements OnInit {
   userName: string;
 
   constructor(
-    public channel: ChannelsComponent,
+    public channel: ChannelListComponent,
     public guestUser: GuestLoginService,
     private router: Router,
     public afAuth: AngularFireAuth,

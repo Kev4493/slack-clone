@@ -4,10 +4,10 @@ import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-channels',
-  templateUrl: './channels.component.html',
-  styleUrls: ['./channels.component.scss']
+  templateUrl: './channel-list.component.html',
+  styleUrls: ['./channel-list.component.scss']
 })
-export class ChannelsComponent implements OnInit {
+export class ChannelListComponent implements OnInit {
 
   allChannels: any = [];
 
