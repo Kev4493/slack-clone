@@ -1,10 +1,12 @@
 <mat-drawer-container class="mat-drawer-container" autosize>
     <mat-drawer #drawer class="mat-sidenav" mode="side">
+        <h2>Channels</h2>
         <div class="channel-container">
-            <h2>Channels</h2>
             <!--#CHANNEL_LIST-->
             <app-channels></app-channels>
-            <button mat-raised-button class="add-channel-btn" (click)="addChannel()">
+        </div>
+        <div class="add-channel">
+                <button mat-raised-button class="add-channel-btn" (click)="addChannel()">
                 <mat-icon aria-hidden="false" fontIcon="add"></mat-icon>
                 Add Channel
             </button>
@@ -15,6 +17,10 @@
                 <mat-icon aria-hidden="false" fontIcon="logout"></mat-icon>
                 Logout
             </button>
+        </div>
+        <div class="sub-menu">
+            <span>Imprint</span>
+            <span>Data-protection</span>
         </div>
     </mat-drawer>
 

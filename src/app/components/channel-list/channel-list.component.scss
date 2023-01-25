@@ -1,9 +1,28 @@
-.channel-list-ul{
+.channel-list {
+    height: 300px;
+    overflow-y: scroll;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+}
+
+::ng-deep .mat-sidenav {
+    width: 100%;
+}
+
+.channel-list-ul {
     padding-inline-start: 0px;
-    li{
+
+    li {
         height: 30px;
         list-style: none;
-        &:hover{
+        width: 100%;
+        font-size: var(--fs-l);
+
+        &:hover {
             transform: scale(1.05);
             cursor: pointer;
         }
