@@ -107,15 +107,15 @@
         </div> -->
 
         <!--#MESSAGE_FIELD-->
-        
+
     </div>
 
     <div class="msg-create-conainer">
 
-            <div class="new-msg-container">
-                <!-- <app-chatbox></app-chatbox> -->
-
-                <div mat-dialog-content>
+        <div class="new-msg-container">
+            <!-- <app-chatbox></app-chatbox> -->
+            <app-chatbox></app-chatbox>
+            <!-- <div mat-dialog-content>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <mat-form-field class="mr-16" appearance="outline">
                             <mat-label>Message</mat-label>
@@ -123,12 +123,12 @@
                                 placeholder="Text...">
                         </mat-form-field>
                     </div>
-                </div>
-                <!--#ACCENT_COLORED RAISED BTN-->
-                <button (click)="sendMessage()" cdkFocusInitial class="send-msg-btn">
-                    send
-                </button>
-            </div>
-
+                </div> -->
+            <!--#ACCENT_COLORED RAISED BTN-->
+            <button (click)="sendMessage()" cdkFocusInitial class="send-msg-btn">
+                send
+            </button>
         </div>
+
+    </div>
 </main>

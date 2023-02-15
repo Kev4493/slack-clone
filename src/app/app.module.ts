@@ -42,6 +42,10 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
+// NGX_QUILL
+import { QuillModule } from 'ngx-quill';
+import { QuillConfigModule } from 'ngx-quill/config';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,6 +64,12 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     ChatboxComponent
   ],
   imports: [
+    QuillConfigModule.forRoot({
+      modules: {
+        syntax: true
+      }
+    }),
+    QuillModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

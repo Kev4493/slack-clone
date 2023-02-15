@@ -15,4 +15,11 @@ export class ChatboxComponent {
   ) {
 
   }
+
+  postToChannel() {
+
+  }
+  changedEditor(){
+    
+  }
 }
